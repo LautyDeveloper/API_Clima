@@ -18,3 +18,16 @@ const requestCity = async city => {
     console.error(error);
   }
 };
+
+const roundNumber = number => Math.round(number);
+
+const getCityData = (cityData) =>({
+    cityName: cityData.name,
+    imageName: cityData.weather[0].icon,
+    cityWeatherInfo: cityData.weather[0].description,
+    cityTemp: roundNumber(cityData.main.temp),
+    cityST: roundNumber(cityData.main.feels_like),
+    cityMaxTemp: roundNumber(cityData.main.temp_max),
+    cityMinTemp: roundNumber(cityData.main.temp_min),
+    cityHumidity: cityData.main.humidity
+})
