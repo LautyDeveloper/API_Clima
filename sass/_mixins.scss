@@ -1,0 +1,19 @@
+@mixin crearFlex ($direction, $justify, $align, $text, $wrap){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    text-align: $text;
+    flex-wrap: $wrap;
+}
+
+@mixin normalizarFondo () {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+@mixin normalizarBorde () {
+    outline: none;
+    border: none;
+}

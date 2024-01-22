@@ -1,0 +1,155 @@
+@use 'normalize';
+@use 'mixins';
+body{
+    font-family: "Poppins", sans-serif;
+    background: rgb(21, 32, 43);
+    background: linear-gradient(
+      190deg,
+      rgba(34, 37, 74, 1),
+      rgba(21, 32, 43, 1) 58%
+    );
+    @include mixins.normalizarFondo();
+    @include mixins.crearFlex(column, flex-start, center, center, inherit);
+    height: 100vh;
+    padding-top: 30px;
+    h1{
+        color: #a943a9;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 3rem;
+    }
+    form{
+        width: 50%;
+        margin-top: 40px;
+        height: 90px;
+        @include mixins.crearFlex(column, space-between, center, center, inherit);
+        label{
+            color: white;
+            font-size: 1.2rem;
+            font-family:'Courier New', Courier, monospace 
+        }
+        .search_container{
+            @include mixins.crearFlex(row, space-between, center, center, inherit);
+            width: 70%;
+            .input_container{
+                @include mixins.crearFlex(row, space-between, center, center, inherit);
+                width: 40%;
+                height: 40px;
+                background-color: #2c3442;
+                padding: 8px;
+                border-radius: 20px;
+                img{
+                    width: 10%;
+                    height: 80%;
+                }
+                input{
+                    width: 87%;
+                    height: 100%;
+                    background-color: #2c3442;
+                    border-radius: 20px;
+                    color: ghostwhite;
+                    @include mixins.normalizarBorde()
+                }
+            }
+            button{
+                background-color: #a943a9;
+                height: 100%;
+                border-radius: 20px;
+                width: 55%;
+                color: white;
+                font-size: 1.1rem;
+                letter-spacing: 2px;
+                cursor: pointer;
+                transition: .2s ease-in; 
+                @include mixins.normalizarBorde()
+            }
+            button:hover{
+                background-color: #853585;
+            }
+        }
+    }
+    .resultado_container{
+        @include mixins.crearFlex(column, center, center, center, inherit);
+        width: 100%;
+        margin-top: 10px;
+        .error{
+            margin-top: 60px;
+            h2{
+                color: white;
+                font-size: 1.6rem;
+                margin-top: 5px;
+            }
+        }
+        .weather-card{
+            @include mixins.crearFlex(row, space-between, center, inherit, wrap);
+            background-color: rgba(34, 36, 71, 1);
+            padding: 30px;
+            border-radius: 10px;
+            position: relative;
+            width: 50%;
+            .weather-info-container{
+                @include mixins.crearFlex(column, center, center, start, inherit);
+                text-transform: capitalize;
+                .weather-title{
+                    color: white;
+                    font-size: 35px;
+                    font-weight: 300;
+                }
+                .weather-description{
+                    font-size: 16px;
+                    color: #853585;
+                }
+                .weather-temp-container{
+                    margin-block-start: 10px;
+                    display: flex;
+                    align-items: baseline;
+                    .weather-temp {
+                        font-size: 80px;
+                        font-weight: 300;
+                        color: white;
+                      }
+                      
+                      .weather-st {
+                        background-color: rgba(217, 217, 217, 0.1);
+                        color: #853585;
+                        padding: 5px 20px;
+                        border-radius: 10px;
+                      }
+                }
+            }
+            .weather-extra-container {
+                @include mixins.crearFlex(column, center, center, inherit, inherit);
+                .weather-minmax-container {
+                    @include mixins.crearFlex(column, inherit, inherit, inherit, inherit);
+                    .weather-span {
+                        font-size: 25px;
+                        font-weight: 300;
+                        color: white;
+                      }
+                      
+                      .weather-span i {
+                        padding: 0 10px;
+                        font-size: 16px;
+                        color: #853585;
+                      }
+                  }
+                  
+                    .weather-humidity {
+                        border-top: 1px solid #853585;
+                        border-bottom: 1px solid #853585;
+                        margin-block-start: 15px;
+                        padding: 5px 30px;
+                        color: white;
+                    }
+              }
+        }
+    }
+    .parrafo{
+        color: white;
+        margin-top: 40px;
+        p{
+            font-family:'Courier New', Courier, monospace ;
+            font-size: 1.1rem;
+        }
+    }
+    
+}
