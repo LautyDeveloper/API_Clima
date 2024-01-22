@@ -31,3 +31,38 @@ const getCityData = (cityData) =>({
     cityMinTemp: roundNumber(cityData.main.temp_min),
     cityHumidity: cityData.main.humidity
 })
+
+const createCardTemplate = (cityData) =>{
+  const {cityName, imageName, cityWeatherInfo, cityTemp, cityST, cityMaxTemp, cityMinTemp, cityHumidity} = getCityData(cityData);
+
+  return `
+  <div class="weather-card animate">
+      <div class="weather-info-container">
+        <h2 class="weather-title">${cityName}</h2>
+        <p class="weather-description">${cityWeatherInfo}</p>
+        <div class="weather-temp-container">
+          <span class="weather-temp">${cityTemp} °</span>
+          <span class="weather-st">${cityST}° ST</span>
+        </div>
+      </div>
+      <div class="weather-img-container">
+        <img src="./assets/img/${imageName}.png" alt="weather image" />
+      </div>
+      <div class="weather-extra-container">
+        <div class="weather-minmax-container">
+          <span class="weather-span"
+            ><i class="fa-solid fa-arrow-up-long"></i>Max: ${cityMaxTemp}º</span
+          >
+          <span class="weather-span"
+            ><i class="fa-solid fa-arrow-down-long"></i>Min: ${cityMinTemp}º</span
+          >
+        </div>
+        <span class="weather-humidity">${cityHumidity}% Humedad</span>
+      </div>
+    </div>
+  `
+}
+
+const renderCityCard = (cityData) =>{
+  resultContainer.innerHTML = createCardTemplate(cityData)
+}
