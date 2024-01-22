@@ -120,3 +120,9 @@ const searchCity = async(e) =>{
   form.reset()
 
 }
+
+const init = () => {
+  form.addEventListener("submit", searchCity)
+}
+
+init();
