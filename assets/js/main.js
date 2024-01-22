@@ -94,3 +94,29 @@ const renderInvalidError = () =>{
 </div> 
   `
 }
+
+const searchCity = async(e) =>{
+  e.preventDefault()
+  //Chequear el Valor del Input
+
+  //Chequear si el Input esta vacio
+  if (isEmptyInput()){
+      renderEmptyError()
+      return;
+  }
+
+  //Hacer el fetch
+  const fetchedCity = await requestCity(input.value)
+
+  //Chequear si la ciudad es Valida
+  if(isInvalidCity(fetchedCity)){
+      renderInvalidError()
+      return;
+  }
+  
+  //Si es valida, renderizamos la Card
+  renderCityCard(fetchedCity);
+  changeParragraphMesagge(fetchedCity)
+  form.reset()
+
+}
