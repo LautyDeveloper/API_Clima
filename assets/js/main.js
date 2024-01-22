@@ -67,6 +67,12 @@ const renderCityCard = (cityData) =>{
   resultContainer.innerHTML = createCardTemplate(cityData)
 }
 
+const changeParragraphMesagge = (cityData) =>{
+    parragraphContainer.innerHTML = `
+      <p>Asi esta El Clima en <b>${cityData.name}</b></p>
+    `
+}
+
 const isEmptyInput = () =>{
   return input.value.trim() === ''
 }
