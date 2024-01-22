@@ -66,3 +66,31 @@ const createCardTemplate = (cityData) =>{
 const renderCityCard = (cityData) =>{
   resultContainer.innerHTML = createCardTemplate(cityData)
 }
+
+const isEmptyInput = () =>{
+  return input.value.trim() === ''
+}
+
+const renderEmptyError = () =>{
+  resultContainer.innerHTML = `
+  <div class="error">
+      <img src="assets/media/advertencia.png" alt="" />
+      <h2>!Ups¡ Debes ingresar una Ciudad para poder Buscarla =)</h2>
+    </div>
+  `
+}
+
+const isInvalidCity = (cityData) =>{
+  return !cityData.id
+}
+
+const renderInvalidError = () =>{
+  resultContainer.innerHTML = `
+  <div class="error">
+  <img src="assets/media/advertencia.png" alt="" />
+  <h2>
+    !Ups¡ Aparentemente no hay una ciudad que coincida con lo ingresado =(
+  </h2>
+</div> 
+  `
+}
